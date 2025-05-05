@@ -50,6 +50,20 @@ public class Horaire {
         return true;
     }
 
+    /**
+     * compareTo() retourne
+     * - un entier négatif si l’horaire this est antérieur à parHoraire
+     * - un entier positif si l’horaire this est postérieur à parHoraire
+     * - 0 si this et parHoraire sont les mêmes horaires
+     * @param parHoraire l’horaire comparé à this
+     * @return un entier résultat de la comparaison
+     */
+    public int compareTo(Horaire parHoraire) {
+
+        return this.toMinutes() - parHoraire.toMinutes();
+    }
+
+
     public String toString(){
 
         return chHeure +"h" + chQuartHeure;
