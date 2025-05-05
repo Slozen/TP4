@@ -9,9 +9,10 @@ import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class testHoraire {
+@TestMethodOrder( MethodOrderer.OrderAnnotation.class) public class testHoraire {
 
     @Test
+    @Order(1)
     public void testComparTo() throws ExceptionPlanning{
 
 
@@ -25,5 +26,15 @@ public class testHoraire {
         assertTrue(a2.compareTo(a1) < 0);
 
 
+    }
+    @Test
+    @Order(2)
+
+    public void testToMinute(){
+
+        Horaire a1 = new Horaire(15,30);
+
+        assertTrue(a1.toMinutes() == 930);
+        assertFalse(a1.toMinutes() == 900);
     }
 }
